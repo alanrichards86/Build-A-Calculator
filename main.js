@@ -43,11 +43,11 @@ for (let i = 0; i < btnList.length; i++) {
 function calculate(event) {
   let id = event.srcElement.id;
   let buttonValues = { zero:0, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9};
-  console.log(buttonValues[id]);
-  
+     
   //If its a Number
   if(buttonValues > -1){
     currentValue = currentValue + buttonValues[id];
+    console.log(currentValue);
 
 
   //If its a an operator
@@ -56,7 +56,9 @@ function calculate(event) {
     if(id === 'add'){
       //Operator Not blank
       currentOperator = "add";
+      console.log(currentOperator);
     }
+
 
   }
   // calculatorValue = add(calculatorValue, buttonValues[id]);
