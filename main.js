@@ -13,6 +13,7 @@ var plus = document.querySelector('#plus');
 var minus = document.querySelector('#minus');
 var multiply = document.querySelector('#multiply');
 var divide = document.querySelector('#divide');
+var clear = document.querySelector('#clear');
 var answerZone = document.querySelector('#info');
 // btn1.addEventListener('click', fun1);
 numZero.addEventListener('click', fun1);
@@ -29,25 +30,47 @@ plus.addEventListener('click', fun1);
 minus.addEventListener('click', fun1);
 multiply.addEventListener('click', fun1);
 divide.addEventListener('click', fun1);
+clear.addEventListener('click', fun1);
+console.log(event);
+var calculations = [];
+var buttonValues = { zero:0, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9};
+var buttonValueClear = {clear:""};
 
+
+function runCalculations() {
+  var calcuValue = 0;
+  let id = event.srcElement.id
+  for (let i = 0; i < calculations.length; i++) {
+    //If Operators (not a number)
+    // if ( calculuations[i] === 'plus') {
+    //   let number = calculuations[i - 1]; //number
+    //   console.log(event);
+    // }
+  }
+}
 function fun1() {
   let id = event.srcElement.id;
-  if (id == 'zero' || 'one' || 'two' || 'three' || 'four' || 'five' || 'six' || 'seven' || 'eight' || 'nine') {
-    console.log(event);
-    let buttonValues = { zero:0, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9};
+  if (buttonValues[id] > -1) {
     return answerZone.textContent += buttonValues[id];
 
-}else if ($(div).attr('#plus') == plus.event){
-    console.log('hi');
+
+  } else{
+      calculations.push(answerZone.textContent);
+      calculations.push(id);
+
+      console.log(calculations);
+      runCalculations();
   }
+
  // plus:'+', minus:'-', multiply:'*', divide:'/'
 }
+
 
 
 // for (let i = 0; i < btnList.length; i++) {
 //   let btn = btnList[i];
 
-
+// id === 'zero' || id === 'one' || id === 'two' || id === 'three' || id === 'four' || id === 'five' || id === 'six' || id === 'seven' || id === 'eight' || id === 'nine'
 
 
 

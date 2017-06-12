@@ -47,7 +47,7 @@
 }
 .stage {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-size: 2em;
   color: white;
