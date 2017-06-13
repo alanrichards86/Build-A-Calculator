@@ -14,6 +14,8 @@ var minus = document.querySelector('#minus');
 var multiply = document.querySelector('#multiply');
 var divide = document.querySelector('#divide');
 var clear = document.querySelector('#clear');
+var equal = document.querySelector('#equals');
+var period = document.querySelector('#period');
 var answerZone = document.querySelector('#info');
 // btn1.addEventListener('click', fun1);
 numZero.addEventListener('click', fun1);
@@ -30,40 +32,58 @@ plus.addEventListener('click', fun1);
 minus.addEventListener('click', fun1);
 multiply.addEventListener('click', fun1);
 divide.addEventListener('click', fun1);
+period.addEventListener('click', fun1);
+equal.addEventListener('click', fun1);
 clear.addEventListener('click', fun1);
-console.log(event);
-var calculations = [];
-var buttonValues = { zero:0, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9};
-var buttonValueClear = {clear:""};
+
+let calcOpp =[];
+let calculations = [];
+let clearIt = {clear:""};
+let evaluate = {equals:'='};
+let operators = {plus:'+', minus:'-', multiply:'*', divide:'/'};
+let buttonValues = {zero:'0', one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9, period:'.'};
 
 
-function runCalculations() {
-  var calcuValue = 0;
-  let id = event.srcElement.id
-  for (let i = 0; i < calculations.length; i++) {
-    //If Operators (not a number)
-    // if ( calculuations[i] === 'plus') {
-    //   let number = calculuations[i - 1]; //number
-    //   console.log(event);
-    // }
-  }
-}
+
 function fun1() {
   let id = event.srcElement.id;
-  if (buttonValues[id] > -1) {
+
+  if (buttonValues[id]) {
+    console.log(event);
     return answerZone.textContent += buttonValues[id];
 
 
-  } else{
-      calculations.push(answerZone.textContent);
-      calculations.push(id);
-
+  } else if (operators[id]) {
+      calculations.push(answerZone.innerHTML);
+      calcOpp.push(operators[id]);
+      answerZone.textContent = "";
+      console.log('hi');
+      console.log(calcOpp);
       console.log(calculations);
-      runCalculations();
-  }
 
- // plus:'+', minus:'-', multiply:'*', divide:'/'
+  }else if (evaluate[id]) {
+      console.log('hello');
+
+  }else {
+      answerZone.textContent = "";
+      console.log('hi');
+      console.log(event);
+      calcOpp = [];
+      calculations = [];
+      console.log(calcOpp);
+      console.log(calculations);
+  }
+  //  else if (buttonValues != buttonValues[id]) {
+  //   answerZone.textContent = eval(answerZone.innerHTML);
+  //   // answerZone.textContent = "";
+  //   console.log(event);
+
+  // }
+
 }
+
+
+
 
 
 
