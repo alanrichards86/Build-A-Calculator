@@ -50,21 +50,46 @@ function fun1() {
 
   if (buttonValues[id]) {
     console.log(event);
+    calculations.push(buttonValues[id]);
+    console.log(calculations);
     return answerZone.textContent += buttonValues[id];
 
 
+
   } else if (operators[id]) {
-      calculations.push(answerZone.innerHTML);
+      // calculations.push(buttonValues[id]);
       calcOpp.push(operators[id]);
-      answerZone.textContent = "";
+      answerZone.textContent += operators[id];
       console.log('hi');
       console.log(calcOpp);
       console.log(calculations);
 
   }else if (evaluate[id]) {
-      console.log('hello');
+    let num1 = parseInt(calculations[0]);
+    let opp = calcOpp[id];
+    let num2= parseInt(calculations[1]);
+    // return answerZone.textContent = num1 + num2;
+    console.log('hello');
 
-  }else {
+        // NESTED IF STATEMENTS HERE TO CHECK WHAT OPPERATION BEING INPUTED
+    for (let n = 0; n < calcOpp.length; n++) {
+        if (calcOpp[n] == "*") {
+          console.log('MULTIPLY');
+          return answerZone.textContent = num1 * num2;
+        }else if (calcOpp[n] == "/") {
+          console.log('DIVIDE');
+          return answerZone.textContent = num1 / num2;
+        }else if (calcOpp[n] == "+") {
+          console.log('ADD');
+          return answerZone.textContent = num1 + num2;
+        }else if (calcOpp[n] == "-") {
+          console.log('MINUS');
+          return answerZone.textContent = num1 - num2;
+        }
+
+      }
+
+  }  else {
       answerZone.textContent = "";
       console.log('hi');
       console.log(event);

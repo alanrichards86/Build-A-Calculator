@@ -40,7 +40,10 @@
 }
 #divide, #multiply, #minus, #plus {
   background-color: #82c276;
-  color: #3e6438;
+  color: black;
+}
+.hover-change:hover {
+  color: white;
 }
 #seven {
   /*border-top: 0;*/
