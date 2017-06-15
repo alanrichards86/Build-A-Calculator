@@ -50,7 +50,7 @@ function fun1() {
 
   if (buttonValues[id]) {
     console.log(event);
-    calculations.push(buttonValues[id]);
+    // calculations.push(buttonValues[id]);
     console.log(calculations);
     return answerZone.textContent += buttonValues[id];
 
@@ -59,6 +59,7 @@ function fun1() {
   } else if (operators[id]) {
       // calculations.push(buttonValues[id]);
       calcOpp.push(operators[id]);
+      calculations.push(answerZone.innerHTML);
       answerZone.textContent += operators[id];
       console.log('hi');
       console.log(calcOpp);
@@ -98,86 +99,4 @@ function fun1() {
       console.log(calcOpp);
       console.log(calculations);
   }
-  //  else if (buttonValues != buttonValues[id]) {
-  //   answerZone.textContent = eval(answerZone.innerHTML);
-  //   // answerZone.textContent = "";
-  //   console.log(event);
-
-  // }
-
-}
-
-
-
-
-
-
-// for (let i = 0; i < btnList.length; i++) {
-//   let btn = btnList[i];
-
-// id === 'zero' || id === 'one' || id === 'two' || id === 'three' || id === 'four' || id === 'five' || id === 'six' || id === 'seven' || id === 'eight' || id === 'nine'
-
-
-
-
-
-// onClick = 'calculator.stage'
-// var btnList = document.querySelectorAll(".row-button");
-// var info = document.querySelector(".stage");
-// var memoryValue = 0; // The current
-// var currentValue = ""; // What the user just entered
-// var currentOperator = ""; //Operator that was pressed
-//
-//
-// for (let i = 0; i < btnList.length; i++) {
-//   let btn = btnList[i];
-//
-//   btn.addEventListener("click", calculate);
-// }
-// // If press button and its a number
-//   // Check for current operator, if then save new value to currentValue
-//   // if operator save operator
-//
-// function calculate(event) {
-//   let id = event.srcElement.id;
-//   console.log(event);
-//   let buttonValues = { zero:0, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9};
-//   //If its a Number
-//   if(buttonValues > "-1"){
-//     currentValue = currentValue + buttonValues[id];
-//
-//   //If its a an operator
-//   } else{
-//
-//     if(id === 'add'){
-//       //Operator Not blank
-//       currentOperator = "add";
-//       console.log(currentOperator);
-//     }
-//
-//
-//   }
-//   // calculatorValue = add(calculatorValue, buttonValues[id]);
-//   info.stage = currentValue; //string
-//
-// }
-// //add, subtract, multiply, divide, equals, clear
-//
-// function add(num1, num2) {
-//   return num1 + num2;
-// }
-//
-// function subtract(num1, num2) {
-//   return num1 - num2;
-// }
-//
-// function multiply(num1, num2) {
-//   return num1 * num2;
-// }
-//
-// function divide(num1, num2) {
-//   return num1 / num2;
-// }
-
-  // btn = ["", 7, 8, 9, "", 4, 5, 6, "", 1, 2, 3, "", 0, "", "", ""];
-  // console.log("you clicked button number " + btn[i]);
+  
